@@ -16,6 +16,9 @@ class ProductsController < ApplicationController
     redirect_to @product, notice: "Product created successfully"
   end
 
+  def show
+  end
+
   private
   def set_product
     @products = Product.find(params[:id])
