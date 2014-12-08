@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
   end
 
   def new
-    @products = Product.new
+    @product = Product.new
   end
 
   def create
@@ -25,7 +25,11 @@ class ProductsController < ApplicationController
     @product.update(product_params)
 
     redirect_to @product, notice: "Product was successfully updated"
+  end
 
+  def destroy
+    @product.destroy
+    redirect_to @product, notice: "Product was deleted"
   end
 
   private
